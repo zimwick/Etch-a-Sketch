@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 47vw;
+  margin: 0 auto;
+}
+
+.cell {
+  flex: 0 0 6.25%;
+  aspect-ratio: 1 /1;
+  background-color: #fca311;
+}
+
+.cell:hover {
+  background-color: #14213d;
+}
