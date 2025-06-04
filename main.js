@@ -30,8 +30,12 @@ const changeGridBtn = document.querySelector(".grid-btn");
 
 changeGridBtn.addEventListener("click", () => {
   const size = Number(prompt("Grid Size: Example 16 = 16x16", "16"));
-  deleteGrid();
-  createGrid(size);
+  if (typeof size === "number" && size <= 100 && size > 0) {
+    deleteGrid();
+    createGrid(size);
+  } else {
+    alert("Error must be a number up to 100 or less");
+  }
 });
 
 //render initial grid
