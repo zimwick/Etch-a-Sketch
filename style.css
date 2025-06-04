@@ -8,11 +8,16 @@ body {
   background-color: #e5e5e5;
 }
 
+main {
+  text-align: center;
+}
+
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  width: 47vw;
+  width: 48vw;
   margin: 0 auto;
+  border: 1px solid black;
 }
 
 .cell {
@@ -21,6 +26,9 @@ body {
   background-color: #fca311;
 }
 
-.cell:hover {
+.cell-hovered {
   background-color: #14213d;
+}
+
+.grid-btn {
 }

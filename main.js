@@ -1,17 +1,38 @@
 "use strict";
 
-const createGrid = function (gridX, gridY) {
-  for (let y = 0; y < gridY; y++) {
-    for (let x = 0; x < gridX; x++) {
-      const newDiv = document.createElement("div");
-      const newContent = document.createTextNode(x);
-      newDiv.className = "cell";
-      newDiv.appendChild(newContent);
-      gridContainer.appendChild(newDiv);
-    }
+const createGrid = function (size) {
+  for (let x = 0; x < size ** 2; x++) {
+    const newDiv = document.createElement("div");
+    //const newContent = document.createTextNode(x);
+    newDiv.className = "cell";
+    newDiv.style.flex = `0 0 ${100 / size}%`;
+    //newDiv.appendChild(newContent);
+    gridContainer.appendChild(newDiv);
+    changeCellOnHover(newDiv);
   }
 };
 
-const gridContainer = document.querySelector(".grid-container");
+const deleteGrid = function () {
+  const children = Array.from(gridContainer.children);
+  for (const child of children) {
+    gridContainer.removeChild(child);
+  }
+};
 
-createGrid(16, 16);
+const changeCellOnHover = function (elem) {
+  elem.addEventListener("mouseover", () => {
+    elem.classList.add("cell-hovered");
+  });
+};
+
+const gridContainer = document.querySelector(".grid-container");
+const changeGridBtn = document.querySelector(".grid-btn");
+
+changeGridBtn.addEventListener("click", () => {
+  const size = Number(prompt("Grid Size: Example 16 = 16x16", "16"));
+  deleteGrid();
+  createGrid(size);
+});
+
+//render initial grid
+createGrid(16);
