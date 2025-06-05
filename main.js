@@ -21,8 +21,16 @@ const deleteGrid = function () {
 
 const changeCellOnHover = function (elem) {
   elem.addEventListener("mouseover", () => {
-    elem.classList.add("cell-hovered");
+    randomizeCellColor(elem);
   });
+};
+
+const randomizeCellColor = function (elem) {
+  const rgb1 = Math.floor(Math.random() * 256);
+  const rgb2 = Math.floor(Math.random() * 256);
+  const rgb3 = Math.floor(Math.random() * 256);
+
+  elem.style.backgroundColor = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
 };
 
 const gridContainer = document.querySelector(".grid-container");
