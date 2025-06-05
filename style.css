@@ -2,20 +2,43 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Funnel Sans", sans-serif;
 }
 
 body {
   background-color: #e5e5e5;
 }
 
+h1 {
+  font-size: 46px;
+  color: #14213d;
+  margin: 20px 0;
+}
+
 main {
   text-align: center;
+}
+
+button {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #14213d;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #202f51;
 }
 
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  width: 48vw;
+  width: 70vh;
   margin: 0 auto;
   border: 1px solid black;
 }
@@ -24,7 +47,4 @@ main {
   flex: 0 0 6.25%;
   aspect-ratio: 1 /1;
   background-color: #fca311;
-}
-
-.grid-btn {
 }
