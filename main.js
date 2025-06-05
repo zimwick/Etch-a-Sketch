@@ -31,6 +31,11 @@ const randomizeCellColor = function (elem) {
   const rgb3 = Math.floor(Math.random() * 256);
 
   elem.style.backgroundColor = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
+
+  let opacity = elem.style.opacity === "" ? 0 : Number(elem.style.opacity);
+  if (opacity < 1) {
+    elem.style.opacity = String(opacity + 0.1);
+  }
 };
 
 const gridContainer = document.querySelector(".grid-container");
